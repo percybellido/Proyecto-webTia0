@@ -1,0 +1,51 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .services1 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        background-color:chocolate;
+        padding-top: 20px;
+        margin-top:50px;
+                
+    }
+
+    .services1 .interna {
+        width: 550px;
+        height: 750px;
+        border-radius: 8px;
+        box-shadow: 0 2px rgba(0,0,0,0.2);
+        overflow: hidden;
+        margin: 20px;
+        text-align: center;
+        transition: all 0.25s;
+        background-color: rgb(211, 158, 88);
+    }
+
+    .services1 .interna:hover{
+        transform:translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.5);
+    }
+    .services1 .interna img{
+        width: 450;
+        height: 650;
+    }
+    
+</style>
+
+        <div class="services1">
+            {% for service in services %}  
+                <div class="interna">
+                        <h2>{{service.title}}</h2>
+                        <h3>{{service.subtitle}}</h3>
+                        <p>{{service.content}}</p>
+                        <img src="{{service.image.url}}">
+                </div>
+            {% endfor %}
+
+        </div>
+   
+{% endblock %}

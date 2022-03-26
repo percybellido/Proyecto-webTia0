@@ -1,0 +1,51 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="loren">
+    <h1 class="titulo_banner">Servicio satisfactorio</h1>
+    <p class="texto_banner">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid veritatis, porro dolor iste pariatur officiis. Tempore necessitatibus voluptatibus delectus? Exercitationem.</p>
+
+</div>
+
+<div class="principal">
+    
+    
+        <div class="central">
+            <h3 class="titulo">Number Speaks</h3>
+            <div class="numeros">
+                <div class="casas_limpias">
+                <h2>2556</h2>
+                <h3>Homes Cleaned</h3>
+                </div>
+                <div class="Satisfaccion">
+                <h2>100%</h2>
+                <h3>Satisfaction Guaranteed</h3>
+                </div>
+                <div class="top">
+                <h2>867</h2>
+                <h3>Top Rated Reviews</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="galeria"> 
+           <div>
+            <img src="{% static 'core/img/dormitorio.jpeg' %}" alt="News 4">
+           </div>
+           <div>
+            <img src="{% static 'core/img/kitchen.jpeg' %}" alt="News 4">
+           </div>
+           <div>
+            <img src="{% static 'core/img/living.jpeg' %}" alt="News 4">
+           </div>
+           <div class="baño">
+            <img src="{% static 'core/img/Baños.jpeg' %}" alt="News 4">
+           </div> 
+        </div>
+    
+    
+
+</div>
+{% endblock %}

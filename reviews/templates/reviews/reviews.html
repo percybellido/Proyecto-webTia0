@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Reviews</h1>
+
+<form method="POST"">
+{% csrf_token %}
+    {{ form.as_table }}
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}

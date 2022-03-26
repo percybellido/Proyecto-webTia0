@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .services1 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        background-color:chocolate;
+        padding-top: 20px;
+        margin-top:50px;
+                
+    }
+
+    .interna {
+        width: 450px;
+        margin-left: 20px;
+        
+    }
+
+    .foto {
+        padding-top:20px;
+    }
+</style>
+
+        <div class="services1">
+            {% for post  in category.get_posts.all %}  
+                        
+                <div class="interna">
+                    <h4>{{post.published|date:"SHORT_DATE_FORMAT"}}</h4>
+                    <h2>{{post.title}}</h2>
+                    <h3>{{post.content}}</h3>
+                    <p class="foto"><img src="{{post.image.url}}"></p>
+                    <span>Publicado por <em><b>{{post.author}}</b></em> en 
+                       <!-- <em><a href="#" class="link">Historia</a>, <a href="#" class="link">Economia</a>, <a href="#" class="link">Hogar</a>, <a href="#" class="link">Salud</a></em>-->
+                       <em> 
+                       {% for category in post.categories.all %}
+                        <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+                       {% endfor %}
+                    </em>
+                    </span>
+                    
+                </div>
+            {% endfor %}
+
+        </div>
+   
+{% endblock %}

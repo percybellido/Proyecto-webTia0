@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldys'Cleans</title>
+    <link rel="stylesheet" href="core/static/css/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,600&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <link  href="{% static 'core/css/styles.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    
+    <div class="imagen_fondo">
+        <header class="cabecera">
+            <div class="titulo">
+                <h1>Aldys'Cleans</h1>
+                <h3>CLEANING SERVICES</h3>
+            </div>
+            
+            <div>
+                <div class="menu1">
+                    <nav class="container">
+                        <ul class="menu"> 
+                            <li class="nav_uno  px-lg-4 {% if request.path == '/' %}active{% endif %}">
+                                <a href="{% url 'home' %}">about</a>
+                            </li>
+                            <li class=" nav_uno px-lg-4 {% if request.path == '/services/' %}active{% endif %}">
+                                <a href="{% url 'services' %}">services</a>
+                            </li>
+                            
+                            <li class="nav_uno px-lg-4 {% if request.path == '/deals/' %}active{% endif %}">
+                                <a href="{% url 'deals' %}">deals</a>
+                            </li>
+                            <li class="nav_uno px-lg-4 {% if request.path|slice:':6' == '/blog/' %}active{% endif %}">
+                                <a href="{% url 'blog' %}">blog</a>
+                            </li>
+                            <li class="nav_uno px-lg-4 {% if request.path == '/contact/' %}active{% endif %}">
+                                <a href="{% url 'contact' %}">contact</a>
+                            </li>
+                            <li class="nav_uno px-lg-4 {% if request.path == '/reviews/' %}active{% endif %}">
+                                <a href="{% url 'reviews_app:reviews' %}">reviews</a>
+                            </li>
+                            <li class="nav_uno px-lg-4 {% if request.path == '/request_a_quote/' %}active{% endif %}">
+                                <a href="{% url 'request_a_quote' %}">request a quote</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+</body>
+</html>
+{% block content %}
+
+
+{% endblock %}
+    <!--<div class="pie_s">-->
+
+    <footer class="pie">
+        
+            <div class="parrafo">
+                <h2 id="Titulo">Why Choose Aldy's Clean Service?</h2>
+                <h3>We Are More Tha equipped To Provide Quality Service To Our Customers.</h3>
+                <h3>As One Of The Leading Cleaning Companies, We Make Sure That We</h3>
+                <h3>Deliver Our Service In Excellence To The Best Of Our Abilities.</h3>
+            </div>
+            <div class="big_foot2">
+                <div class="logotipo2">
+                    <img src="{%static 'core/img/logo_tia.png' %}" class="logo"/>
+                    <h2 >cleaning services</h2>
+                </div>
+                
+                <div class="caja1"> 
+                        <h4>Get In Touch</h4>
+                        <h5>923094919</h5>
+                </div>
+                <div class="caja2">
+                        <h4>Bussines Hours</h4>
+                        <h5>Monday-Saturday</h5>
+                        <h5>8:00AM-6:00PM</h5>
+                </div>
+                <div class="lista1">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">House Cleaning, Sanitizing & Disinfecting</a></li>
+                        <li><a href="#">Recurring Cleaning</a></li>
+                        <li><a href="#">Move in / Move Out Cleaning</a></li>
+                        <li><a href="#">Disifection Services(COVID-19)</a></li>
+                        <li><a href="#">Construction Cleaning</a></li>
+                        <li><a href="#">Comercial Cleaning</a></li>
+                        <li><a href="#">Carpet Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="lista2">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="#">Washington, DC</a></li>
+                        <li><a href="#">Virginia</a></li>
+                        <li><a href="#">California</a></li>
+                        <li><a href="#">Maryland</li>
+                        <li><a href="#">Fairfax</li>
+                        <li><a href="#">Rockville</li>
+                        <li><a href="#">Alexandria</li>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+</body>
+</html>
